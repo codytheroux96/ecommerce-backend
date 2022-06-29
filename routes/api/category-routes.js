@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
         }
       ]
     }
-  ).then(categoryData => res.json(categoryData))
+  ).then(newCategoryData => res.json(newCategoryData))
   .catch(err => {
     console.log(err);
     res.status(500).json(err)
@@ -27,7 +27,32 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
+  Category.findOne(
+    {
+      where: {
+        id: req.params.id
+      },
+      attributes: ['id', 'category_name'],
+      include: [
+        {
+          model: Product,
+          attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
+        }
+      ]
+    }
+  ).then(newCategoryData => {
+    if (!newCategoryData) {
+      res.status (404).json({message: 'No category with this ID found'});
+      return
+    }
+      res.json(newCategoryData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err)
+  });
 });
+
 
 router.post('/', (req, res) => {
   // create a new category
