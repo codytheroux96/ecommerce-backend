@@ -11,9 +11,9 @@
 ## Description
 I built the back end for an e-commerce site using an already working exprees API and configured it to use Sequelize to interact with a MySQL database.
 ## Visuals
-- [Demo Video Part 1]()
-- [Demo Video Part 2]()
-- [Demo Video Part 3]()
+- [Demo Video Part 1](https://drive.google.com/file/d/1rTrz7j_Cx9bkTNR4ES5zzTqlIuTyD3oB/view)
+- [Demo Video Part 2](https://drive.google.com/file/d/19BlXGWnwxehX7oXDUQIHDMsAeWsI_Q0X/view)
+- [Demo Video Part 3](https://drive.google.com/file/d/1YKeG7icDam5n1aOVRmDAc7cBiWU-qDag/view)
 
 ## Installation
 For this program you will need the following packages and dependencies:
